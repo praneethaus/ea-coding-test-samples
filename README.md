@@ -6,8 +6,8 @@ These instructions will help in setting up the projects of your choice and runni
 
 ### Project scaffolding
 
-* androidapp - https://github.com/EATechnology/ea-coding-test-samples/tree/main/androidapp
+* androidapp - https://github.com/energyaustralia-coding-test/ea-coding-test-samples/tree/main/androidapp
 
-* ios - https://github.com/EATechnology/ea-coding-test-samples/tree/main/ios
+* ios - https://github.com/energyaustralia-coding-test/ea-coding-test-samples/tree/main/ios
 
-* web - https://github.com/EATechnology/ea-coding-test-samples/tree/main/web
+* web - https://github.com/energyaustralia-coding-test/ea-coding-test-samples/tree/main/web
