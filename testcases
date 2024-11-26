@@ -1,0 +1,152 @@
+
+Test Case 1: TC_01 - Valid Response (200 OK)
+Description:
+Verify that the API returns a 200 OK status code with a valid response body.
+Pre-condition:
+API is available and properly configured.
+Test Steps:
+Send a GET request to https://eacp.energyaustralia.com.au/codingtest/api/v1/festivals.
+Check if the HTTP response status code is 200 OK.
+Validate that the response body contains a field name of type string.
+Validate that the brand field is an object that contains the following subfields:
+name: a string.
+recordables: a list/array.
+Expected Result:
+Response status code is 200 OK.
+Response body contains a string field name.
+The brand field is an object containing:
+name as a string.
+recordables as a list/array (may be empty or contain items).
+________________________________________
+Test Case 2: TC_02 - Missing Name in Response Body
+Description:
+Verify that the response body contains a name field.
+Pre-condition:
+API is available and properly configured.
+Test Steps:
+Send a GET request to https://eacp.energyaustralia.com.au/codingtest/api/v1/festivals.
+Validate that the name field exists in the response body and is of type string.
+Expected Result:
+The response body contains a name field.
+The name field is of type string.
+________________________________________
+Test Case 3: TC_03 - Brand Object Structure
+Description:
+Verify that the brand field in the response is an object and has the correct properties.
+Pre-condition:
+API is available and properly configured.
+Test Steps:
+Send a GET request to https://eacp.energyaustralia.com.au/codingtest/api/v1/festivals.
+Validate that the brand field is an object containing:
+name: a string.
+recordables: an array (even if empty).
+Expected Result:
+The brand field is an object.
+The brand object contains:
+name as a string.
+recordables as an array.
+________________________________________
+Test Case 4: TC_04 - Non-Empty Recordables Array
+Description:
+Verify that the recordables array is returned as part of the brand object and contains valid data.
+Pre-condition:
+API is available and properly configured.
+Test Steps:
+Send a GET request to https://eacp.energyaustralia.com.au/codingtest/api/v1/festivals.
+Check if the brand.recordables field is an array.
+Validate that the array is not empty (if applicable) or contains meaningful data.
+Expected Result:
+The brand.recordables field is an array.
+The array is either non-empty or contains valid data.
+________________________________________
+Test Case 5: TC_05 - Response Structure Validation
+Description:
+Ensure that the response follows the required JSON schema.
+Pre-condition:
+API is available.
+Test Steps:
+Send a GET request to https://eacp.energyaustralia.com.au/codingtest/api/v1/festivals.
+Validate that the response body matches the expected JSON schema, i.e., contains:
+name field as a string.
+brand object with correct subfields.
+Expected Result:
+The response body matches the expected JSON schema.
+________________________________________
+Test Case 6: TC_06 - API Response Time
+Description:
+Verify that the API responds within an acceptable time frame.
+Pre-condition:
+API is available and functioning.
+Test Steps:
+Send a GET request to https://eacp.energyaustralia.com.au/codingtest/api/v1/festivals.
+Measure the time taken for the API to respond.
+Expected Result:
+The response time should be less than 2 seconds.
+________________________________________
+Test Case 7: TC_07 - Security – Unauthorized Request
+Description:
+Verify that an unauthorized request returns a 401 Unauthorized status code.
+Pre-condition:
+API requires authentication (if applicable).
+Test Steps:
+Send a GET request to /api/v1/festivals without any authorization header or with invalid credentials.
+Expected Result:
+The API should return a 401 Unauthorized response.
+________________________________________
+Test Case 8: TC_08 - Security – Invalid API Key
+Description:
+Verify that the API returns a 403 Forbidden status code when an invalid API key is used.
+Pre-condition:
+API requires a valid API key.
+Test Steps:
+Send a GET request to https://eacp.energyaustralia.com.au/codingtest/api/v1/festivals with an invalid or expired API key.
+Expected Result:
+The response should return a 403 Forbidden status.
+________________________________________
+Test Case 9: TC_09 - Load Testing (Stress Test)
+Description:
+Verify that the API can handle a high load.
+Pre-condition:
+API is available.
+Test Steps:
+Simulate multiple users (e.g., 1000 concurrent users) making GET requests to /api/v1/festivals.
+Monitor the response times and error rates during the test.
+Expected Result:
+The API should handle the load without crashing.
+Response times should remain within acceptable limits (less than 2 seconds).
+________________________________________
+Test Case 10: TC_10 - API Rate Limiting
+Description:
+Verify that the API enforces rate limits.
+Pre-condition:
+API has rate limiting configured.
+Test Steps:
+Send a GET request to https://eacp.energyaustralia.com.au/codingtest/api/v1/festivals within a short period (e.g., 100 requests in 1 second).
+Expected Result:
+The API should return a 429 Too Many Requests status code after reaching the rate limit.
+Response should include a message: "Error: Too many requests, throttling."
+________________________________________
+Test Case 11: TC_11 - Data Integrity
+Description:
+Ensure that the data returned by the API is consistent across different requests.
+Pre-condition:
+API is available and consistent data is expected.
+Test Steps:
+Send two consecutive GET requests to https://eacp.energyaustralia.com.au/codingtest/api/v1/festivals.
+Compare the results from both requests.
+Expected Result:
+The name, brand, and recordables fields should return consistent values across requests.
+________________________________________
+Test Case 12: TC_12 - Caching
+Description:
+Ensure that the API supports caching to improve performance.
+Pre-condition:
+API supports caching.
+Test Steps:
+Send two consecutive GET requests to https://eacp.energyaustralia.com.au/codingtest/api/v1/festivals.
+Verify that a Cache-Control header is present in the response.
+Check the cache behavior (e.g., send the same request after a short period and observe the response time).
+Expected Result:
+The API includes caching headers.
+Subsequent requests should be faster if cached.
+ 
