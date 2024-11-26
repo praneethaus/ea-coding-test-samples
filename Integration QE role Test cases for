@@ -1,4 +1,4 @@
-Here is the detailed automation test case format for the given scenarios:
+Here is the detailed test case format for the given scenarios:
 Test Case 1: TC_01 - Valid Response (200 OK)
 Description:
 Verify that the API returns a 200 OK status code with a valid response body.
